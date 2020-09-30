@@ -32,8 +32,8 @@ class Task extends Component {
                         return (<li key={t} onClick={this.deleteTask.bind(this, t)}>{t}</li>)
                     })}
                 </ul>
-                <input type="text" placeholder="Enter task" id="task" value={this.state.value} onChange={this.handlerChange} />
-                <input name="submit" type="submit" onClick={this.addTask} />
+                <input className="inputTask" type="text" placeholder="Enter task" id="task" value={this.state.value} onChange={this.handlerChange} />
+                <input className="inputButton" name="submit" type="submit" onClick={this.addTask} />
              </div>
         );
     }

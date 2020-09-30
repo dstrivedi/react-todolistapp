@@ -1,3 +1,35 @@
 .taskName {
     list-style-type: none;
+    line-height: 2;
+    width: 70%;
 }
+
+.taskName li {
+  cursor: pointer;
+  box-shadow: 2px 2px 4px;
+  padding: 10px;
+  margin: 5px;
+  border-bottom: 1px solid white;
+}
+
+input {
+  box-shadow: 2px 2px 4px;
+  border-radius: 4px;
+  line-height: 2;
+}
+
+.inputTask {
+  width: 65%;
+  height: 30px;
+}
+
+.inputButton {
+  background-color: black;
+  color: white;
+}
+
+.inputTask, .inputButton {
+  margin: 20px 0px 0px 45px;
+  display: flex;
+}
+
