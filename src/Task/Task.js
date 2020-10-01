@@ -19,8 +19,15 @@ class Task extends Component {
     }
 
     deleteTask = (t) => {
-        var newState = this.state.tasks;
-        newState.pop(t);
+        var newState = [...this.state.tasks];
+        for(let i = 0 ; i < newState.length; i++) {
+          console.log(newState[i] === t)
+          if(newState[i] === t) {
+            newState.splice(i, 1);
+          }
+        }
+        console.log(this.state.tasks);
+        console.log(newState);
         this.setState({tasks: newState});
     }
 
@@ -32,8 +39,8 @@ class Task extends Component {
                         return (<li key={t} onClick={this.deleteTask.bind(this, t)}>{t}</li>)
                     })}
                 </ul>
-                <input className="inputTask" type="text" placeholder="Enter task" id="task" value={this.state.value} onChange={this.handlerChange} />
-                <input className="inputButton" name="submit" type="submit" onClick={this.addTask} />
+                <input className="inputTask" type="text" placeholder="Add task" id="task" value={this.state.value} onChange={this.handlerChange} />
+                <input className="inputButton" name="submit"  value="Add Task" type="submit" onClick={this.addTask} />
              </div>
         );
     }
